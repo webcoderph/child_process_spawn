@@ -1,7 +1,7 @@
 const fs = require('fs')
-
 const readline = require('readline');
 var buf = ''
+
 async function processLineByLine() {
   const fileStream = fs.createReadStream('json.txt');
 
@@ -9,13 +9,14 @@ async function processLineByLine() {
     input: fileStream,
     crlfDelay: Infinity
   });
+
   for await (const line of rl) {
     buf += line
   }
 
   let json = JSON.parse(buf)
   for(i in json) {
-	  console.log( "subject_id", json[i].subject_id)
+	  console.log("id", json[i].id)
   }
 }
 

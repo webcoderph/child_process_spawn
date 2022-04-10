@@ -1,14 +1,12 @@
 const { spawn } = require('child_process')
-
-
-let json = []
-for(i=1; i<=100000; i++) {
-   json.push({id: i, data: [Array.from(Array(10).keys())]})
-}
-
 const fs = require('fs');
 
 let writeStream = fs.createWriteStream('json.txt');
+let json = []
+
+for(i=1; i<=100000; i++) {
+   json.push({id: i, data: [Array.from(Array(10).keys())]})
+}
 
 writeStream.write(JSON.stringify(json));
 
