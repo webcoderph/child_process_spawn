@@ -1,4 +1,4 @@
-# READ ME
+# SIMPLE USE OF SPAWN
 
 ```nodejs
 node version: v16.13.0
