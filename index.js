@@ -1,6 +1,7 @@
 const { spawn } = require('child_process')
 const fs = require('fs');
 
+//WRITE DUMMY JSON STRING ON FILE
 let writeStream = fs.createWriteStream('json.txt');
 let json = []
 
@@ -16,6 +17,7 @@ writeStream.on('finish', () => {
 
 writeStream.end();
 
+//RUN SPAWN
 const ls = spawn('node', ['worker']);
 
 ls.stdout.on('data', (data) => {
